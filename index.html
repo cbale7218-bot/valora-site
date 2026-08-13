@@ -7,6 +7,7 @@
 <title>VALORA — Información de pago</title>
 
 <style>
+
 * {
     margin: 0;
     padding: 0;
@@ -28,6 +29,11 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
+
+    min-height: 100vh;
+
+    color: var(--text);
+
     background:
         radial-gradient(
             circle at 85% 10%,
@@ -46,43 +52,10 @@ body {
             #071d3d
         );
 
-    min-height: 100vh;
-    color: var(--text);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
-
-/* =====================================
-   CONFIGURACIÓN
-   CAMBIA DATOS SOLO AQUÍ
-===================================== */
-
-const CONFIG = {
-    company: {
-        name: "VALORA",
-        slogan: "Tu aliado financiero.",
-        logo: "images/logo.png"
-    },
-
-    payment: {
-        recipient: "NOMBRE LEGAL DEL BENEFICIARIO",
-        institution: "NOMBRE REAL DE LA INSTITUCIÓN",
-        account: "000000000000",
-        accountType: "Cuenta corriente",
-        reference: "VALORA-0000",
-        amount: "000,000",
-        currency: "PEN"
-    },
-
-    images: {
-        logo: "images/logo.jpg",
-        institution: "images/institution.png",
-        qr: "images/qrcode.png",
-        background: "images/background.jpg"
-    },
-
-    support: {
-        telegram: "https://t.me/TU_TELEGRAM"
-    }
-};
 
 /* =====================================
    HEADER
@@ -91,8 +64,11 @@ const CONFIG = {
 header {
     width: 100%;
     padding: 22px 25px;
+
     border-bottom: 1px solid rgba(255,255,255,0.08);
+
     background: rgba(4,20,43,0.78);
+
     backdrop-filter: blur(16px);
 }
 
@@ -111,16 +87,22 @@ header {
     gap: 12px;
 
     color: white;
+
     font-size: 28px;
     font-weight: 800;
+
     letter-spacing: 1.5px;
 }
 
 .logo-image {
     width: 42px;
     height: 42px;
+
     border-radius: 11px;
+
     object-fit: contain;
+
+    display: block;
 }
 
 .logo-text span {
@@ -133,6 +115,7 @@ header {
     gap: 9px;
 
     color: #b9cbe0;
+
     font-size: 13px;
 }
 
@@ -143,6 +126,7 @@ header {
     border-radius: 50%;
 
     background: rgba(0,200,150,.12);
+
     color: var(--green);
 
     display: flex;
@@ -158,7 +142,9 @@ header {
 
 main {
     max-width: 1180px;
+
     margin: auto;
+
     padding: 70px 20px 90px;
 }
 
@@ -168,7 +154,9 @@ main {
 
 .hero {
     text-align: center;
+
     max-width: 720px;
+
     margin: 0 auto 50px;
 }
 
@@ -180,13 +168,16 @@ main {
     border-radius: 30px;
 
     background: rgba(30,107,255,.12);
+
     border: 1px solid rgba(30,107,255,.25);
 
     color: #72a8ff;
 
     font-size: 11px;
     font-weight: 800;
+
     letter-spacing: 1.5px;
+
     text-transform: uppercase;
 
     margin-bottom: 20px;
@@ -196,7 +187,9 @@ main {
     color: white;
 
     font-size: clamp(38px,5vw,58px);
+
     line-height: 1.05;
+
     letter-spacing: -2px;
 
     margin-bottom: 20px;
@@ -218,7 +211,9 @@ main {
 
 .hero p {
     color: #a9bdd3;
+
     font-size: 16px;
+
     line-height: 1.7;
 }
 
@@ -230,6 +225,7 @@ main {
     background: #ffffff;
 
     border-radius: 24px;
+
     overflow: hidden;
 
     box-shadow:
@@ -251,6 +247,7 @@ main {
     color: white;
 
     position: relative;
+
     overflow: hidden;
 }
 
@@ -288,6 +285,7 @@ main {
 
 .payment-top-content {
     position: relative;
+
     z-index: 2;
 }
 
@@ -295,12 +293,15 @@ main {
     color: #8fb5df;
 
     font-size: 11px;
+
     text-transform: uppercase;
+
     letter-spacing: 1.5px;
 }
 
 .payment-top h2 {
     font-size: 27px;
+
     margin-top: 8px;
 }
 
@@ -319,6 +320,7 @@ main {
     gap: 20px;
 
     padding-bottom: 30px;
+
     margin-bottom: 30px;
 
     border-bottom: 1px solid var(--border);
@@ -331,6 +333,7 @@ main {
     border-radius: 18px;
 
     background: #f5f9fd;
+
     border: 1px solid var(--border);
 
     display: flex;
@@ -338,6 +341,7 @@ main {
     justify-content: center;
 
     overflow: hidden;
+
     flex-shrink: 0;
 }
 
@@ -346,6 +350,7 @@ main {
     height: 100%;
 
     object-fit: contain;
+
     padding: 12px;
 }
 
@@ -353,13 +358,17 @@ main {
     color: var(--muted);
 
     font-size: 11px;
+
     text-transform: uppercase;
+
     letter-spacing: 1px;
 }
 
 .bank-info h3 {
     font-size: 24px;
+
     margin-top: 5px;
+
     color: var(--text);
 }
 
@@ -367,6 +376,7 @@ main {
     color: var(--muted);
 
     font-size: 14px;
+
     margin-top: 5px;
 }
 
@@ -402,9 +412,11 @@ main {
     color: #7c8c9e;
 
     font-size: 10px;
+
     font-weight: 800;
 
     text-transform: uppercase;
+
     letter-spacing: .8px;
 
     margin-bottom: 8px;
@@ -414,6 +426,7 @@ main {
     display: flex;
 
     align-items: center;
+
     justify-content: space-between;
 
     gap: 10px;
@@ -423,6 +436,7 @@ main {
     color: var(--text);
 
     font-size: 15px;
+
     font-weight: 700;
 
     word-break: break-word;
@@ -432,6 +446,7 @@ main {
     border: none;
 
     background: #eaf4ff;
+
     color: var(--blue);
 
     padding: 8px 12px;
@@ -441,6 +456,7 @@ main {
     cursor: pointer;
 
     font-size: 11px;
+
     font-weight: 800;
 
     transition: .2s;
@@ -450,6 +466,7 @@ main {
 
 .copy-button:hover {
     background: var(--blue);
+
     color: white;
 }
 
@@ -476,6 +493,7 @@ main {
     display: flex;
 
     align-items: center;
+
     justify-content: space-between;
 
     gap: 20px;
@@ -487,6 +505,7 @@ main {
     font-size: 11px;
 
     text-transform: uppercase;
+
     letter-spacing: .8px;
 
     margin-bottom: 5px;
@@ -496,6 +515,7 @@ main {
     color: var(--green);
 
     font-size: 39px;
+
     font-weight: 900;
 }
 
@@ -528,6 +548,7 @@ main {
         0 25px 60px rgba(0,0,0,.08);
 
     position: relative;
+
     overflow: hidden;
 }
 
@@ -554,11 +575,13 @@ main {
 
 .qr-wrapper {
     position: relative;
+
     z-index: 2;
 
     display: flex;
 
     align-items: center;
+
     justify-content: space-between;
 
     gap: 50px;
@@ -580,9 +603,11 @@ main {
     border-radius: 30px;
 
     font-size: 10px;
+
     font-weight: 800;
 
     text-transform: uppercase;
+
     letter-spacing: 1px;
 
     margin-bottom: 15px;
@@ -590,6 +615,7 @@ main {
 
 .qr-information h2 {
     font-size: 29px;
+
     color: var(--text);
 
     margin-bottom: 12px;
@@ -599,6 +625,7 @@ main {
     color: var(--muted);
 
     font-size: 14px;
+
     line-height: 1.7;
 }
 
@@ -606,6 +633,7 @@ main {
     margin-top: 20px;
 
     display: flex;
+
     flex-direction: column;
 
     gap: 10px;
@@ -613,6 +641,7 @@ main {
 
 .qr-step {
     display: flex;
+
     align-items: center;
 
     gap: 10px;
@@ -629,13 +658,17 @@ main {
     border-radius: 50%;
 
     background: #eaf4ff;
+
     color: var(--blue);
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     font-size: 11px;
+
     font-weight: 800;
 }
 
@@ -675,6 +708,7 @@ main {
     color: var(--muted);
 
     font-size: 11px;
+
     font-weight: 700;
 }
 
@@ -698,6 +732,7 @@ main {
     color: #856c36;
 
     font-size: 13px;
+
     font-weight: 800;
 
     margin-bottom: 7px;
@@ -707,6 +742,7 @@ main {
     color: #75694f;
 
     font-size: 12px;
+
     line-height: 1.6;
 }
 
@@ -731,6 +767,7 @@ main {
     display: flex;
 
     align-items: center;
+
     justify-content: space-between;
 
     gap: 25px;
@@ -756,12 +793,15 @@ main {
     background: rgba(30,107,255,.28);
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     color: white;
 
     font-size: 23px;
+
     font-weight: 900;
 }
 
@@ -783,6 +823,7 @@ main {
     display: inline-flex;
 
     align-items: center;
+
     justify-content: center;
 
     gap: 9px;
@@ -796,6 +837,7 @@ main {
     color: white;
 
     font-size: 13px;
+
     font-weight: 800;
 
     text-decoration: none;
@@ -836,6 +878,7 @@ footer {
     color: white;
 
     font-size: 21px;
+
     font-weight: 800;
 
     letter-spacing: 1.5px;
@@ -845,6 +888,20 @@ footer {
 
 .footer-logo span {
     color: var(--green);
+}
+
+/* =====================================
+   IMAGE ERROR
+===================================== */
+
+.image-error {
+    color: #9aaabd;
+
+    font-size: 11px;
+
+    text-align: center;
+
+    padding: 10px;
 }
 
 /* =====================================
@@ -909,6 +966,7 @@ footer {
 
     .amount-box {
         flex-direction: column;
+
         align-items: flex-start;
     }
 
@@ -922,6 +980,7 @@ footer {
 
     .qr-wrapper {
         flex-direction: column;
+
         text-align: center;
     }
 
@@ -935,6 +994,7 @@ footer {
 
     .telegram {
         flex-direction: column;
+
         align-items: stretch;
 
         padding: 25px;
@@ -943,11 +1003,17 @@ footer {
     .telegram-button {
         width: 100%;
     }
+
 }
+
 </style>
 </head>
 
 <body>
+
+<!-- =====================================
+     HEADER
+===================================== -->
 
 <header>
 
@@ -958,8 +1024,8 @@ footer {
             <img
                 id="logoImage"
                 class="logo-image"
-                src=""
-                alt="Logo"
+                src="images/logo.png"
+                alt="VALORA"
             >
 
             <div class="logo-text">
@@ -982,355 +1048,404 @@ footer {
 
 </header>
 
+
+<!-- =====================================
+     MAIN
+===================================== -->
+
 <main>
 
-<section class="hero">
+    <!-- HERO -->
 
-    <div class="hero-label">
-        VALORA · Información de pago
-    </div>
+    <section class="hero">
 
-    <h1>
-        Información para
-        <span>realizar el pago</span>
-    </h1>
-
-    <p>
-        Revisa cuidadosamente la información antes
-        de realizar cualquier transferencia.
-    </p>
-
-</section>
-
-<section class="payment-card">
-
-    <div class="payment-top">
-
-        <div class="payment-top-content">
-
-            <small>
-                Información bancaria
-            </small>
-
-            <h2>
-                Datos del beneficiario
-            </h2>
-
+        <div class="hero-label">
+            VALORA · Información de pago
         </div>
 
-    </div>
+        <h1>
+            Información para
+            <span>realizar el pago</span>
+        </h1>
 
-    <div class="payment-content">
+        <p>
+            Revisa cuidadosamente la información antes
+            de realizar cualquier transferencia.
+        </p>
 
-        <div class="bank-profile">
+    </section>
 
-            <div class="bank-photo">
 
-                <img
-                    id="institutionImage"
-                    src=""
-                    alt="Institución"
-                >
+    <!-- PAYMENT -->
+
+    <section class="payment-card">
+
+        <div class="payment-top">
+
+            <div class="payment-top-content">
+
+                <small>
+                    Información bancaria
+                </small>
+
+                <h2>
+                    Datos del beneficiario
+                </h2>
 
             </div>
 
-            <div class="bank-info">
+        </div>
 
-                <small>
-                    Entidad
-                </small>
 
-                <h3 id="institutionName">
-                    Nombre de la institución
-                </h3>
+        <div class="payment-content">
+
+
+            <!-- INSTITUTION -->
+
+            <div class="bank-profile">
+
+                <div class="bank-photo">
+
+                    <img
+                        id="institutionImage"
+                        src="images/institution.png"
+                        alt="Institución"
+                    >
+
+                </div>
+
+                <div class="bank-info">
+
+                    <small>
+                        Entidad
+                    </small>
+
+                    <h3 id="institutionName">
+                        Nombre de la institución
+                    </h3>
+
+                    <p>
+                        Información de la cuenta para transferencia
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- DETAILS -->
+
+            <div class="details">
+
+
+                <div class="detail full">
+
+                    <span class="detail-label">
+                        Beneficiario
+                    </span>
+
+                    <div class="detail-row">
+
+                        <strong
+                            class="detail-value"
+                            id="beneficiary"
+                        ></strong>
+
+                        <button
+                            class="copy-button"
+                            onclick="copyValue('beneficiary', this)"
+                        >
+                            Copiar
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <span class="detail-label">
+                        Institución
+                    </span>
+
+                    <div class="detail-row">
+
+                        <strong
+                            class="detail-value"
+                            id="institution"
+                        ></strong>
+
+                        <button
+                            class="copy-button"
+                            onclick="copyValue('institution', this)"
+                        >
+                            Copiar
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <span class="detail-label">
+                        Número de cuenta
+                    </span>
+
+                    <div class="detail-row">
+
+                        <strong
+                            class="detail-value"
+                            id="account"
+                        ></strong>
+
+                        <button
+                            class="copy-button"
+                            onclick="copyValue('account', this)"
+                        >
+                            Copiar
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <span class="detail-label">
+                        Tipo de cuenta
+                    </span>
+
+                    <div class="detail-row">
+
+                        <strong
+                            class="detail-value"
+                            id="accountType"
+                        ></strong>
+
+                        <button
+                            class="copy-button"
+                            onclick="copyValue('accountType', this)"
+                        >
+                            Copiar
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <span class="detail-label">
+                        Referencia
+                    </span>
+
+                    <div class="detail-row">
+
+                        <strong
+                            class="detail-value"
+                            id="reference"
+                        ></strong>
+
+                        <button
+                            class="copy-button"
+                            onclick="copyValue('reference', this)"
+                        >
+                            Copiar
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- AMOUNT -->
+
+            <div class="amount-box">
+
+                <div>
+
+                    <div class="amount-label">
+                        Importe
+                    </div>
+
+                    <div
+                        class="amount"
+                        id="amount"
+                    ></div>
+
+                </div>
+
+                <div class="amount-note">
+                    Verifica el importe y los datos
+                    antes de confirmar la operación.
+                </div>
+
+            </div>
+
+
+            <!-- WARNING -->
+
+            <div class="warning">
+
+                <div class="warning-title">
+                    ⚠ Verifica cuidadosamente los datos
+                </div>
 
                 <p>
-                    Información de la cuenta para transferencia
+                    Comprueba el nombre del beneficiario,
+                    institución, número de cuenta, importe
+                    y referencia antes de realizar la operación.
                 </p>
 
             </div>
 
         </div>
 
-        <div class="details">
+    </section>
 
-            <div class="detail full">
 
-                <span class="detail-label">
-                    Beneficiario
-                </span>
+    <!-- QR -->
 
-                <div class="detail-row">
+    <section class="qr-section">
 
-                    <strong
-                        class="detail-value"
-                        id="beneficiary"
-                    ></strong>
+        <div class="qr-wrapper">
 
-                    <button
-                        class="copy-button"
-                        onclick="copyValue('beneficiary', this)"
-                    >
-                        Copiar
-                    </button>
 
+            <div class="qr-information">
+
+                <div class="qr-label">
+                    Pago mediante QR
                 </div>
 
-            </div>
-
-            <div class="detail">
-
-                <span class="detail-label">
-                    Institución
-                </span>
-
-                <div class="detail-row">
-
-                    <strong
-                        class="detail-value"
-                        id="institution"
-                    ></strong>
-
-                    <button
-                        class="copy-button"
-                        onclick="copyValue('institution', this)"
-                    >
-                        Copiar
-                    </button>
-
-                </div>
-
-            </div>
-
-            <div class="detail">
-
-                <span class="detail-label">
-                    Número de cuenta
-                </span>
-
-                <div class="detail-row">
-
-                    <strong
-                        class="detail-value"
-                        id="account"
-                    ></strong>
-
-                    <button
-                        class="copy-button"
-                        onclick="copyValue('account', this)"
-                    >
-                        Copiar
-                    </button>
-
-                </div>
-
-            </div>
-
-            <div class="detail">
-
-                <span class="detail-label">
-                    Tipo de cuenta
-                </span>
-
-                <div class="detail-row">
-
-                    <strong
-                        class="detail-value"
-                        id="accountType"
-                    ></strong>
-
-                    <button
-                        class="copy-button"
-                        onclick="copyValue('accountType', this)"
-                    >
-                        Copiar
-                    </button>
-
-                </div>
-
-            </div>
-
-            <div class="detail">
-
-                <span class="detail-label">
-                    Referencia
-                </span>
-
-                <div class="detail-row">
-
-                    <strong
-                        class="detail-value"
-                        id="reference"
-                    ></strong>
-
-                    <button
-                        class="copy-button"
-                        onclick="copyValue('reference', this)"
-                    >
-                        Copiar
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="amount-box">
-
-            <div>
-
-                <div class="amount-label">
-                    Importe
-                </div>
-
-                <div
-                    class="amount"
-                    id="amount"
-                ></div>
-
-            </div>
-
-            <div class="amount-note">
-                Verifica el importe y los datos
-                antes de confirmar la operación.
-            </div>
-
-        </div>
-
-        <div class="warning">
-
-            <div class="warning-title">
-                ⚠ Verifica cuidadosamente los datos
-            </div>
-
-            <p>
-                Comprueba el nombre del beneficiario,
-                institución, número de cuenta, importe
-                y referencia antes de realizar la operación.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-<section class="qr-section">
-
-    <div class="qr-wrapper">
-
-        <div class="qr-information">
-
-            <div class="qr-label">
-                Pago mediante QR
-            </div>
-
-            <h2>
-                Escanea el código QR
-            </h2>
-
-            <p>
-                Utiliza la cámara de tu teléfono para
-                escanear el código QR proporcionado.
-            </p>
-
-            <div class="qr-steps">
-
-                <div class="qr-step">
-
-                    <div class="qr-step-number">
-                        1
-                    </div>
-
-                    Abre la cámara de tu teléfono
-
-                </div>
-
-                <div class="qr-step">
-
-                    <div class="qr-step-number">
-                        2
-                    </div>
-
+                <h2>
                     Escanea el código QR
+                </h2>
 
-                </div>
+                <p>
+                    Utiliza la cámara de tu teléfono para
+                    escanear el código QR proporcionado.
+                </p>
 
-                <div class="qr-step">
 
-                    <div class="qr-step-number">
-                        3
+                <div class="qr-steps">
+
+                    <div class="qr-step">
+
+                        <div class="qr-step-number">
+                            1
+                        </div>
+
+                        Abre la cámara de tu teléfono
+
                     </div>
 
-                    Verifica los datos antes de continuar
 
+                    <div class="qr-step">
+
+                        <div class="qr-step-number">
+                            2
+                        </div>
+
+                        Escanea el código QR
+
+                    </div>
+
+
+                    <div class="qr-step">
+
+                        <div class="qr-step-number">
+                            3
+                        </div>
+
+                        Verifica los datos antes de continuar
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="qr-box">
+
+                <img
+                    id="qrImage"
+                    class="qr-image"
+                    src="images/payment-qr.png"
+                    alt="Código QR"
+                >
+
+                <div class="qr-caption">
+                    Código QR de pago
                 </div>
 
             </div>
 
         </div>
 
-        <div class="qr-box">
+    </section>
 
-            <img
-                id="qrImage"
-                class="qr-image"
-                src=""
-                alt="Código QR"
-            >
 
-            <div class="qr-caption">
-                Código QR de pago
+    <!-- TELEGRAM -->
+
+    <section class="telegram">
+
+        <div class="telegram-left">
+
+            <div class="telegram-icon">
+                ➤
+            </div>
+
+            <div class="telegram-text">
+
+                <h3>
+                    ¿Necesitas ayuda?
+                </h3>
+
+                <p>
+                    Nuestro equipo está disponible para ayudarte.
+                </p>
+
             </div>
 
         </div>
 
-    </div>
 
-</section>
-
-<section class="telegram">
-
-    <div class="telegram-left">
-
-        <div class="telegram-icon">
+        <a
+            id="telegramButton"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="telegram-button"
+        >
             ➤
-        </div>
+            Contactar por Telegram
+        </a>
 
-        <div class="telegram-text">
-
-            <h3>
-                ¿Necesitas ayuda?
-            </h3>
-
-            <p>
-                Nuestro equipo está disponible para ayudarte.
-            </p>
-
-        </div>
-
-    </div>
-
-    <a
-        id="telegramButton"
-        href="#"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="telegram-button"
-    >
-        ➤
-        Contactar por Telegram
-    </a>
-
-</section>
+    </section>
 
 </main>
+
+
+<!-- =====================================
+     FOOTER
+===================================== -->
 
 <footer>
 
     <div class="footer-logo">
-        <span id="footerName">VALORA</span>
+
+        <span id="footerName">
+            VALORA
+        </span>
+
     </div>
 
     <span id="footerSlogan">
@@ -1343,15 +1458,18 @@ footer {
 
 </footer>
 
+
+<!-- =====================================
+     JAVASCRIPT
+===================================== -->
+
 <script>
 
 /* =====================================
-   CONFIGURACIÓN PRINCIPAL
-   =====================================
+   CONFIGURACIÓN
 
-   PARA CAMBIAR EL SITIO, MODIFICA
-   SOLAMENTE LOS DATOS DE ABAJO.
-*/
+   CAMBIA LOS DATOS SOLAMENTE AQUÍ
+===================================== */
 
 const CONFIG = {
 
@@ -1420,59 +1538,151 @@ const CONFIG = {
 
 
 /* =====================================
-   APLICAR CONFIGURACIÓN
+   ФУНКЦИЯ УСТАНОВКИ ИЗОБРАЖЕНИЯ
 ===================================== */
 
-document.getElementById("logoImage").src =
-    CONFIG.images.logo;
+function setImage(id, path) {
 
-document.getElementById("institutionImage").src =
-    CONFIG.images.institution;
+    const image =
+        document.getElementById(id);
 
-document.getElementById("qrImage").src =
-    CONFIG.images.qr;
+    if (!image) {
+        return;
+    }
+
+    image.src = path;
+
+    image.onerror = function() {
+
+        image.style.display = "none";
+
+        const parent =
+            image.parentElement;
+
+        if (parent) {
+
+            parent.innerHTML =
+                '<div class="image-error">Imagen no disponible</div>';
+
+        }
+
+    };
+
+}
 
 
-document.getElementById("logoName").innerHTML =
+/* =====================================
+   LOGO
+===================================== */
+
+setImage(
+    "logoImage",
+    CONFIG.images.logo
+);
+
+
+/* =====================================
+   INSTITUTION IMAGE
+===================================== */
+
+setImage(
+    "institutionImage",
+    CONFIG.images.institution
+);
+
+
+/* =====================================
+   QR
+===================================== */
+
+setImage(
+    "qrImage",
+    CONFIG.images.qr
+);
+
+
+/* =====================================
+   COMPANY
+===================================== */
+
+document.getElementById(
+    "logoName"
+).textContent =
     CONFIG.company.name;
 
-document.getElementById("footerName").innerHTML =
+
+document.getElementById(
+    "footerName"
+).textContent =
     CONFIG.company.name;
 
-document.getElementById("footerSlogan").innerHTML =
+
+document.getElementById(
+    "footerSlogan"
+).textContent =
     CONFIG.company.slogan;
 
 
-document.getElementById("institutionName").innerText =
+/* =====================================
+   PAYMENT DATA
+===================================== */
+
+document.getElementById(
+    "institutionName"
+).textContent =
     CONFIG.payment.institution;
 
-document.getElementById("institution").innerText =
+
+document.getElementById(
+    "institution"
+).textContent =
     CONFIG.payment.institution;
 
-document.getElementById("beneficiary").innerText =
+
+document.getElementById(
+    "beneficiary"
+).textContent =
     CONFIG.payment.recipient;
 
-document.getElementById("account").innerText =
+
+document.getElementById(
+    "account"
+).textContent =
     CONFIG.payment.account;
 
-document.getElementById("accountType").innerText =
+
+document.getElementById(
+    "accountType"
+).textContent =
     CONFIG.payment.accountType;
 
-document.getElementById("reference").innerText =
+
+document.getElementById(
+    "reference"
+).textContent =
     CONFIG.payment.reference;
 
 
-document.getElementById("amount").innerText =
-    CONFIG.payment.amount + " " +
+document.getElementById(
+    "amount"
+).textContent =
+    CONFIG.payment.amount +
+    " " +
     CONFIG.payment.currency;
 
 
-document.getElementById("telegramButton").href =
+/* =====================================
+   TELEGRAM
+===================================== */
+
+document.getElementById(
+    "telegramButton"
+).href =
     CONFIG.support.telegram;
 
 
 /* =====================================
-   BACKGROUND
+   BACKGROUND IMAGE
 ===================================== */
 
 if (CONFIG.images.background) {
@@ -1490,7 +1700,7 @@ if (CONFIG.images.background) {
 
 
 /* =====================================
-   COPY
+   COPY FUNCTION
 ===================================== */
 
 function copyValue(id, button) {
@@ -1498,26 +1708,98 @@ function copyValue(id, button) {
     const element =
         document.getElementById(id);
 
+    if (!element) {
+        return;
+    }
+
     const text =
-        element.innerText.trim();
+        element.textContent.trim();
 
-    navigator.clipboard.writeText(text)
-        .then(function() {
 
-            const oldText =
-                button.innerText;
+    if (
+        navigator.clipboard &&
+        window.isSecureContext
+    ) {
 
-            button.innerText =
-                "Copiado ✓";
+        navigator.clipboard
+            .writeText(text)
+            .then(function() {
 
-            setTimeout(function() {
+                showCopied(button);
 
-                button.innerText =
-                    oldText;
+            })
+            .catch(function() {
 
-            }, 1500);
+                fallbackCopy(text, button);
 
-        });
+            });
+
+    } else {
+
+        fallbackCopy(text, button);
+
+    }
+
+}
+
+
+/* =====================================
+   FALLBACK COPY
+===================================== */
+
+function fallbackCopy(text, button) {
+
+    const textarea =
+        document.createElement("textarea");
+
+    textarea.value = text;
+
+    textarea.style.position = "fixed";
+
+    textarea.style.left = "-9999px";
+
+    document.body.appendChild(textarea);
+
+    textarea.select();
+
+    try {
+
+        document.execCommand("copy");
+
+        showCopied(button);
+
+    } catch (error) {
+
+        alert(
+            "No se pudo copiar automáticamente. " +
+            "Selecciona y copia el texto manualmente."
+        );
+
+    }
+
+    document.body.removeChild(textarea);
+
+}
+
+
+/* =====================================
+   COPIED MESSAGE
+===================================== */
+
+function showCopied(button) {
+
+    const oldText =
+        button.textContent;
+
+    button.textContent =
+        "Copiado ✓";
+
+    setTimeout(function() {
+
+        button.textContent =
+            oldText;
+
+    }, 1500);
 
 }
 
